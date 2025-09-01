@@ -123,8 +123,6 @@ function generate_l1oc_signal(parameters::L1OCParameters)::Vector{Float64}
     p_l1oc_p = synchronization_two_sequenses(dk_data, meander_sequence)
 
     p_l1oc = chip_time_compaction(parameters, p_l1oc_d, p_l1oc_p)
-    pl4 = plot_autocorrelation(float.(p_l1oc[1:30690]))
-    savefig(pl4, "results/autocor_seq.png")
     l1oc = qpsk_modulator(parameters, p_l1oc)
 end
 
