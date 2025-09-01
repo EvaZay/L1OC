@@ -58,5 +58,5 @@ signal -- сигнал L1OC
 function plot_autocorrelation(signal::Vector{Float64})
     cfx = calculate_autocorrelation(signal)
 
-    plot(cfx, marker=:d, linecolor=:blue, seriestype=:sticks, m=:dot, framestyle=:zerolines, grid=true, xlims=(-0.5, length(signal)-0.5))
+    plot(cfx, marker=:d, legend = false, title="Автокорреляционная функция", linecolor=:blue, seriestype=:sticks, m=:dot, framestyle=:zerolines, grid=true, xlims=(-0.5, length(signal)-0.5))
 end
